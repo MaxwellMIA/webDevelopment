@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicing JS/DOM Interface</title>
+</head>
+<body>
+    <h1 id="myHeading"></h1>
+    <p>The center theme of Mary Shelley's Frankenstein is clearly laid out in the first few pages of the text.(1)</p>
+    <p id="newPara"></p>
+    <script>
+        var header = document.getElementById("myHeading");
+        header.innerHTML = "My essay on Frakenstein";
+    // appendChild()
+        var footNote = document.createElement("p");
+        footNote.innerHTML = "1. From page 5 of <i>Frankenstien</i>";
+    // add the child
+        document.body.appendChild(footNote);
+    // add another paragraph 
+        var para = document.getElementById("newPara");
+        para.innerHTML = "Frankenstein is a book made about a guy making a monster.(2)";
+    // add another footnoteat end of the page
+        var footNote2 = document.createElement("p");
+        footNote2.innerHTML = "2. This 'monster' was made to find new life from death.";
+        document.body.appendChild(footNote2);
+    // use insertBefore()
+        var subTitle = document.createElement("h2");
+        subTitle.innerHTML = "This is my Sub Title";
+    // capture the element we want to add the h2 before
+    // see newPara var above
+        document.body.insertBefore(subTitle, newPara);
+
+
+
+
+    </script>
+</body>
+</html>
