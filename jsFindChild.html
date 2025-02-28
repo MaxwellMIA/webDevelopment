@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Whole Family</title>
+</head>
+<body>
+    <div id="chapter">
+        <h2>Chapter 2: The Structure of a Chapter.</h2>
+        <div id="paragraphs">
+            <p>This chapter will discuss how to write a chapter.</p>
+            <p>When writing, it is important to condense all ideas of the same kind into a chapter.</p>
+            <p>The chapter acts as a parent to each paragraph.</p>
+            <p>Because I have nothing left to say about chapters, this chapter is over.</p>
+            <p>One more thing - <b>open the console</b> to see whats going on behind the scenes.</p>
+        </div>
+    </div>
+    <script>
+        // Open the console to see these messages.
+        var pargraph = document.getElementById("paragraphs");
+        //print the first child element's text
+        console.log("the first child of div paragraphs is: " + pargraph.firstElementChild.innerHTML);
+        //print the last child elements text
+        console.log("The last child of div paragraphs is: " + pargraph.lastElementChild.innerHTML);
+        //print id of parent element. 
+        console.log("The parent element of div paragraphs is: " + pargraph.parentElement.id);
+        //get a list of all div "paragraphs" child.
+        var paragraphList = pargraph.children;
+        //loop through list of paragraphs and print there content.
+        for (var i = 0; i < paragraphList.length; i++) {
+            console.log("Child " + (i + 1) + ": " + paragraphList[i]);
+        }
+    </script>
+</body>
+</html>
