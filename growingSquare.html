@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growing Square</title>
+    <style>
+        #growbox {
+            border: 1px solid black;
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="growbox"></div>
+
+    <script>
+        var box = document.getElementById('growbox');
+
+        //Because the style for the div is set in the css, the div won't have the style attribute
+        //Try printing box.style.height and see what happens
+        // var boxstyle = box.style.height;
+        // console.log(boxstyle);
+
+        var height = 100;
+        var width = 200;
+
+        //Set timer to call the function expand every 200 milliseconds
+
+        var timer = setInterval(expand, 200);
+
+        //Create the expand function
+        function expand(){
+            //Increase the width and height by 2px
+            box.style.width = width + "px";
+            box.style.height = height + "px";
+
+            //Increase the numerical value so next time the current width increases by 2
+            width += 2;
+            height += 2;
+
+            //Once the area reaches a certain size, stop the interval
+            if ((width * height) >=20000) {
+                clearInterval(timer);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Square Example</title>
+    <style>
+        div {
+            border: 1px solid black;
+        }
+
+        #container1 {
+            display: flex;
+            height: 200px;
+            width: 200px;
+            align-items: center;
+            position: relative;
+        }
+
+        #container2 {
+            display: flex;
+            height: 200px;
+            width: 200px;
+            position: relative;
+        }
+
+        #square {
+            position: absolute;
+            height: 50px;
+            width: 50px;
+            background-color: purple;
+        }
+
+        #circle {
+            position: absolute;
+            height: 50px;
+            width: 50px;
+            background-color: green;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Using Left:</h2>
+    <div id="container1">
+        <div id="square"></div>
+    </div>
+
+    <h2>Using Translate;</h2>
+    <div id="container2">
+        <div id="circle"></div>
+    </div>
+    <script>
+        var square = document.getElementById("square");
+        square.style.left = "0px";
+        var timer = setInterval(moveLeft, 20);
+        var left = 1;
+
+        //Subtract the width of the square from the width of the container
+        var RIGHT_END = 200 - 50;
+
+        function moveLeft() {
+            square.style.left = left + "px";
+            left += 1;
+
+            //Stop timer if square has reached the end of the container
+            if(left >= RIGHT_END) {
+                clearInterval(timer);
+            }
+        }
+
+        var circle = document.getElementById("circle");
+        var timerWithTranslate = setInterval(moveDiagonal, 20);
+        var leftWithTranslate = 1;
+        var downWithTranslate = 1;
+        var BOTTOM = 200 - 50;
+
+        circle.style.transform = "translate(100px, 100px)";
+
+        function moveDiagonal() {
+            //Translate is capable of moving items in both the x and y directions
+            circle.style.transform = "translate(" + leftWithTranslate + "px, " + downWithTranslate + "px)";
+        
+
+            //Increase the x and y coordinates
+            leftWithTranslate++;
+            downWithTranslate++;
+
+            if(leftWithTranslate >= RIGHT_END && downWithTranslate >= BOTTOM) {
+            clearInterval(timerWithTranslate);
+            }
+        }
+    </script>
+</body>
+</html>

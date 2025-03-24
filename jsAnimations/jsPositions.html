@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice with JS Positions</title>
+    <link rel="stylesheet" href="/jsAnimations/styles.css">
+</head>
+<body>
+    <div id="circle"></div>
+    <div id="square"></div>
+    <div id="triangle"></div>
+
+    <script>
+        var windowHeight = window.innerHeight;
+        var windowWidth = window.innerWidth;
+
+        var circle = document.getElementById("circle");
+        var square = document.getElementById("square");
+        var triangle = document.getElementById("triangle");
+
+        circle.style.position = "relative";
+        triangle.style.position = "relative";
+        square.style.position = "relative";
+
+        circle.style.top = (windowHeight - 100) + "px";
+        square.style.top = (windowHeight - 100) + "px";
+        triangle.style.top = (windowHeight - 255) + "px";
+
+        circle.style.left = (windowWidth/2 - 25) + "px";
+        triangle.style.left = (windowWidth/2 - 25) + "px";
+        square.style.left = (windowWidth/2 - 25) + "px";
+    </script>
+</body>
+</html>
