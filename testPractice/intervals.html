@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS animanion with setInterval and Clear</title>
+</head>
+<body>
+    <button onclick="startTime()">Start Time</button>
+    <button onclick="stopTime()">Stop Time</button>
+
+    <div id="timer">0</div>
+
+    <script>
+        var count = 0;
+        var timer;
+
+        function startTime() {
+            timer = setInterval(function(){
+                document.getElementById('timer').innerHTML = ++count;
+            }, 1000);
+        }
+
+        function stopTime() {
+            clearInterval(timer);
+        }
+    </script>
+
+</body>
+</html>

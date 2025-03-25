@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding CSS useing JS</title>
+    <style>
+        .red-button {
+            padding: 5px;
+            margin: 25px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Make Me Red</button>
+
+    <script>
+        var button= document.getElementById('btn');
+        button.setAttribute('class', 'red-button');
+        button.style.backgroundColor = 'red';
+    </script>
+
+</body>
+</html>

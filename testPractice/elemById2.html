@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js getElementById</title>
+</head>
+<body>
+    <p id="example">Hello, world.</p>
+    <p id="p2">Goodbye, world./p>
+    
+    <script>
+        var p =document.getElementById('example');
+        p.innerHTML = "I changed the text";
+        p.style.color = "#45f2ca";
+
+        document.getElementById('p2').innerHTML = "This is paragraph two.";
+        document.getElementById('p2').style.backgroundColor = "pink";
+    </script>
+
+</body>
+</html>

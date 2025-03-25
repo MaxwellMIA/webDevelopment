@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS getElementsByTagName</title>
+</head>
+<body>
+    <p>First</p> <!--O-->
+    <p>Second</p> <!--1-->
+    <p>Third</p> <!--2-->
+
+    <script>
+        var p = document.getElementsByTagName('p');
+
+        /*The line above creates a LIST of all the paragraphs tags in the document. You can navigate through the paragraphs by referencing the index of the list*/
+        
+        p[1].style.backgroundColor = "red";
+        p[2].style.fontSize = "4em";
+
+        for (var paras of p) {
+            paras.style.color = "goldenrod";
+            paras.style.fontWeight = "bold";
+        }
+    </script>
+
+</body>
+</html>
