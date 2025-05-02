@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>saving your name</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <p id="welcome"></p>
+    <p>Refresh the page to see localStorage in action!</p>
+
+    <script>
+        //check to see if the key user exists
+        if(localStorage.getItem("user")) {
+            // if true, welcome the user back to the site
+            $("#welcome").text("Welcome back, " + localStorage.user);
+        } else {
+            // otherwise ask the user there name, store ther in the localstorage
+            var name = prompt("what is you name?");
+            localStorage.setItem("user", name);
+            $("welcome").text("welcome to my site, " + name);
+        }
+    </script>
+</body>
+</html>
